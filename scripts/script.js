@@ -21,6 +21,7 @@ const render = function() {
             <button class="todo-complete"></button>
          </div>
       `;
+      
       headerInput.value = '';
 
       if (item.completed) {
@@ -41,9 +42,9 @@ const render = function() {
          todoData.splice(i, 1);
          li.remove();
          render();
-         localStorage.setItem('todo', JSON.stringify(todoData));
-         
+         localStorage.setItem('todo', JSON.stringify(todoData)); 
       });
+
       headerButton.disabled = true;
       headerInput.addEventListener('input', function() {
          if (headerInput.value !== '') {
@@ -67,12 +68,8 @@ todoControl.addEventListener('submit', function(event) {
       completed: false  
    };
    todoData.push(newTodo);
-   
    render();
-
    localStorage.setItem('todo', JSON.stringify(todoData));
 });
-
-
 
 render();
