@@ -44,7 +44,6 @@ const render = function() {
          localStorage.setItem('todo', JSON.stringify(todoData));
          
       });
-
       headerButton.disabled = true;
       headerInput.addEventListener('input', function() {
          if (headerInput.value !== '') {
