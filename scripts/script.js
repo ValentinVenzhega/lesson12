@@ -44,16 +44,6 @@ const render = function() {
          render();
          localStorage.setItem('todo', JSON.stringify(todoData)); 
       });
-
-      headerButton.disabled = true;
-      headerInput.addEventListener('input', function() {
-         console.log(typeof(headerInput.input));
-         if (headerInput.value.trim() !== '') {
-            headerButton.disabled = false;
-         } else {
-            headerButton.disabled = true;
-         }
-      });
    });
 };
 
