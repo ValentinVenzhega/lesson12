@@ -47,6 +47,7 @@ const render = function() {
 
       headerButton.disabled = true;
       headerInput.addEventListener('input', function() {
+         console.log(typeof(headerInput.input));
          if (headerInput.value.trim() !== '') {
             headerButton.disabled = false;
          } else {
@@ -61,17 +62,20 @@ if(localStorage.getItem('todo')) {
    render();
 }
 
-
 todoControl.addEventListener('submit', function(event) {
    event.preventDefault();
-   const newTodo = {
-      value: headerInput.value,
-      completed: false  
-   };
-   todoData.push(newTodo);
+   if (headerInput.value.trim() !== '') {
+      const newTodo = {
+         value: headerInput.value,
+         completed: false  
+      };
+      todoData.push(newTodo);
+   } else {
+      alert('введите данные');
+   }
+   
    render();
    localStorage.setItem('todo', JSON.stringify(todoData));
 });
 
 render();
-console.log(typeof(headerInput));
