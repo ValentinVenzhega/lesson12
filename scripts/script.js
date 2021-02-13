@@ -47,7 +47,7 @@ const render = function() {
 
       headerButton.disabled = true;
       headerInput.addEventListener('input', function() {
-         if (headerInput.value !== '' && headerInput.value.trim() !== '') {
+         if (headerInput.value.trim() !== '') {
             headerButton.disabled = false;
          } else {
             headerButton.disabled = true;
