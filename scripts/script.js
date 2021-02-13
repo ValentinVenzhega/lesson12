@@ -47,7 +47,7 @@ const render = function() {
 
       headerButton.disabled = true;
       headerInput.addEventListener('input', function() {
-         if (headerInput.value !== '') {
+         if (headerInput.value !== '' && headerInput.value.trim() !== '') {
             headerButton.disabled = false;
          } else {
             headerButton.disabled = true;
@@ -61,6 +61,7 @@ if(localStorage.getItem('todo')) {
    render();
 }
 
+
 todoControl.addEventListener('submit', function(event) {
    event.preventDefault();
    const newTodo = {
@@ -73,3 +74,4 @@ todoControl.addEventListener('submit', function(event) {
 });
 
 render();
+console.log(typeof(headerInput));
